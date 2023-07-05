@@ -1,0 +1,138 @@
+<div class="card">
+    <h3><u>Squirtle</u></h3>
+    <img src="images/squirtle.jpg" width="100px" height="100px">
+    <p>Squirtle is a water-type pokemon.They are known for their ability to shoot water out of its mouth with great force.</p>
+  </div>
+
+  <div class="card">
+    <h3><u>Magikarp</u></h3>
+    <img src="images/magikarp.jpg" width="100px" height="100px"></img>
+    <p>One of the weakest pokemon, but can evolve into something very powerful...</p>
+  </div>
+
+  <div class="card">
+    <h3><u>Pikachu</u></h3>
+    <img src="images/pikachu.jpg" width="100px" height="100px">
+    <p>Pikachu is an electric type pokemon. They are known to be able to shoot beams of electricity</p>
+  </div>
+
+  <div class="card">
+    <h3><u>Charizard</u></h3>
+    <img src="images/chari.jpg" width="100px" height="100px">
+    <p></p>
+  </div>
+
+  <div class="card">
+    <h3><u>Bulbasaur</u></h3>
+    <img src="images/" width="100px" height="100px">
+    <p></p>
+  </div>
+
+  <div class="card">
+    <h3><u>Gengar</u></h3>
+    <img src="images/" width="100px" height="100px">
+    <p></p>
+  </div>
+
+
+  h3>Features</h3>
+        <ul>
+            <li>Feature one</li>
+            <li>Feature two</li>
+        </ul>
+
+        <div class="card">
+        <h3><u>Squirtle</u></h3>
+        <img src="images/squirtle.jpg" width="100px" height="100px">
+        <p>Squirtle is a water-type pokemon.They are known for their ability to shoot water out of its mouth with great force.</p>
+        <a href="squirtle.html" class="read-button">Read more</a>
+      </div>
+    
+      <div class="card">
+        <h3><u>Magikarp</u></h3>
+        <img src="images/magikarp.jpg" width="100px" height="100px"></img>
+        <p>One of the weakest pokemon, but can evolve into something very powerful...</p>
+        <a href="poke-types.css" class="read2"></a>
+      </div>
+    
+      <div class="card">
+        <h3><u>Pikachu</u></h3>
+        <img src="images/pikachu.jpg" width="100px" height="100px">
+        <p>Pikachu is an electric type pokemon. They are known to be able to shoot beams of electricity</p>
+      </div>
+    
+      <div class="card">
+        <h3><u>Charizard</u></h3>
+        <img src="images/chari.jpg" width="100px" height="100px">
+        <p>Charizard is a fire-type pokemon, they are known to have flame breath</p>
+      </div>
+    
+      <div class="card">
+        <h3><u>Bulbasaur</u></h3>
+        <img src="images/bulb.jpg" width="100px" height="100px">
+        <p>Bulbasaur is a grass/poison type pokemon whois able to use a variety of attacks.</p>
+      </div>
+    
+      <div class="card">
+        <h3><u>Gengar</u></h3>
+        <img src="images/gengar.jpg" width="100px" height="100px">
+        <p>Gengar is a ghost/poison type pokemon that is known for its mischevious behaviour and its powerful moves such as shadow ball and sludge bomb</p>
+      </div>
+
+
+
+
+
+      fetch('https://pokeapi.co/api/v2/pokemon?limit=898') // Fetching the first 10 Pokemon, you can adjust the limit as per your requirement.
+      .then(response => response.json())
+      .then(data => {
+        const pokemonList = data.results;
+
+        // Iterate over each Pokemon in the list
+        pokemonList.forEach(pokemon => {
+          // Fetch Pokemon details by URL
+          fetch(pokemon.url)
+            .then(response => response.json())
+            .then(pokemonData => {
+              const { name, sprites, types } = pokemonData;
+
+              // Extracting the relevant information
+              const pokemonName = name;
+              const pokemonImage = sprites.front_default;
+               const pokemonType = types.map(type => type.type.name).join(', ');
+
+              // Generate HTML for Pokemon card
+              const cardHTML = `
+                <div class="card">
+                  <h2>${pokemonName}</h2>
+                  <img src="${pokemonImage}" alt="${pokemonName}">
+                  <p>Type:</p>
+                  <span>
+                    ${types.map(type => `<li>${type.type.name}</li>`).join('')}
+                  </span>
+                </div>
+              `;
+
+              // Append the card to the cardContainer div
+              document.getElementById('cardContainer').innerHTML += cardHTML;
+
+            });
+        });
+      })
+      .catch(error => console.log(error));
+
+      function searchPokemon() {
+        const cards = document.getElementsByClassName('card');
+
+        // Hide or show cards based on the search input
+        for (const card of cards) {
+          const pokemonName = card.getElementsByTagName('h2')[0].innerText.toLowerCase();
+  
+          if (pokemonName.includes(searchInput)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+        
+      }

@@ -1,0 +1,48 @@
+h1 {
+    font-family: 'Caprasimo', cursive;
+    color: black;
+    background-color: aqua;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+    background-color: bisque;
+    padding: 30px;
+}
+
+.pokemon-image {
+    float: left;
+}
+.pokemon-details {
+    float: left;
+    padding-left: 30px;
+}
+hr {
+    clear: both;
+    border: none;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: green;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
