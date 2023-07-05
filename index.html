@@ -7,16 +7,17 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Caprasimo&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="poke-types.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <div class="pokedex">
     <h1>Know your pokemon!</h1>
-    <input type = "text" id="searchInput" placeholder = "Search for pokemons...">
-    <div class="pokemon-list" id="pokemonlist">      
-    </div>
+    <input type = "text" id="searchInput" placeholder = "Search for pokemons/type/trainer...">
+    <button onclick="searchPokemon()">Search</button>
+    <div class="pokemon-list" id="pokemonlist"></div>
+    <div id="cardContainer"></div>
   </div>
-<script src="script.js"></script>
  </body>
 </html>
