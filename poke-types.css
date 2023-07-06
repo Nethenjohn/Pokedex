@@ -9,10 +9,12 @@ h1 {
     background-color: whitesmoke;
     text-align: center;
     padding: 40px;
+    text-transform: capitalize;
 }
 
 h2 {
     text-align: center;
+    text-transform: capitalize;
 }
 
 .pokedex {
@@ -38,11 +40,9 @@ h2 {
     transition: box-shadow 0.3s ease;
     transition: transform 0.3s ease;
 
-    height: 300px;
+    height: 200px;
 }
 
-.card img {
-    width: 80px;
 .card span {
     background-color: rgb(233, 230, 230);
     display: block;
@@ -51,6 +51,16 @@ h2 {
     width: 100px;
 }
 
+.card span {
+    text-align: center;
+}
+
+.card img {
+    width: 100px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    
 }
 
 .card:hover {
@@ -65,7 +75,7 @@ ul {
     text-align: left;
 }
 
-.read-button {
+.searchPokemon {
     display: inline-block;
     padding: 0 10px 10px 0;
     background-color: green;
@@ -79,6 +89,27 @@ ul {
 
 }
 
-.read-button:hover {
+.searchPokemon:hover {
     background-color: #45a049;
 }
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel #cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .navigation button {
+    margin: 0 5px;
+  }
