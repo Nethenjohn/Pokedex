@@ -1,24 +1,28 @@
  body {
-    font-family: 'Avro','serif';
-    background-color: lightblue;
+    font-family: 'Arvo','serif';
+    background-color: #4F6367;
 }
 
 h1 {
     font-family: 'Caprasimo', cursive;
     color: black;
-    background-color: whitesmoke;
+    background-color: #B8D8D8;
     text-align: center;
     padding: 40px;
     text-transform: capitalize;
+    border-radius: 20px;
 }
 
 h2 {
     text-align: center;
     text-transform: capitalize;
+    color: #EEF5DB;
+
+  
 }
 
 .pokedex {
-    width: 1200px;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -27,6 +31,7 @@ h2 {
     width: auto;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px;
 }
 
 .card {
@@ -34,26 +39,25 @@ h2 {
     width: 200px;
     padding: 20px;
     margin: 10px;
-    background-color: lightgrey;
+    background-color: #7A9E9F;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    border-radius: 10px;
+    border-radius: 30px;
     transition: box-shadow 0.3s ease;
     transition: transform 0.3s ease;
 
-    height: 200px;
+   
 }
 
 .card span {
-    background-color: rgb(233, 230, 230);
+    background-color: rgba(233, 230, 230, 0.733);
     display: block;
-    border-radius: 50px;
+    border-radius: 200px;
     margin: 0 auto;
     width: 100px;
-}
-
-.card span {
     text-align: center;
 }
+
+
 
 .card img {
     width: 100px;
@@ -64,52 +68,104 @@ h2 {
 }
 
 .card:hover {
-    background-color: white;
+    
     box-shadow: 0 px 16px 0 rgba(0,0,0,0.2);
     transform: translateY(-10px);
+    background-color: #656b79;
 }
-
 
 
 ul {
     text-align: left;
 }
 
-.searchPokemon {
+
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+ul li {
+    margin-right: 10px;
+  }
+
+ul.types {
+    display: flex;
+    justify-content: center;
+}
+
+ul.types li {
+    background-color: lightgrey;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px;
+    /* line-height: 18px; */
+    text-transform: capitalize;
+    font-size: 12px;
     display: inline-block;
-    padding: 0 10px 10px 0;
-    background-color: green;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: normal;
-    text-transform: lowercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
+    padding: 3px 8px;
+    
+} 
 
-}
-
-.searchPokemon:hover {
-    background-color: #45a049;
-}
-
-.carousel {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .carousel #cardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .navigation {
+.search-container {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-  }
+    margin-bottom: 20px;
+}
   
-  .navigation button {
-    margin: 0 5px;
-  }
+#searchInput {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+  
+#searchButton {
+    padding: 8px 16px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+  
+#searchButton:hover {
+    background-color: #990000;
+}
+
+#mySidenav a {
+    position: absolute; 
+    left: -80px; 
+    transition: 0.3s; 
+    padding: 15px; 
+    width: 100px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+    border-radius: 0 5px 5px 0; 
+}
+  
+#mySidenav a:hover {
+    left: 0; 
+}
+  
+  
+#about {
+    top: 20px;
+    background-color: #04AA6D;
+}
+  
+#blog {
+    top: 80px;
+    background-color: #2196F3; 
+}
+  
+#projects {
+    top: 140px;
+    background-color: #f44336; 
+}
+  
+#contact {
+    top: 200px;
+    background-color: #555 
+}
