@@ -35,7 +35,7 @@ function fetchPokemon(searchString) {
       const cardHTML = `
         <div class="card">
           <h2>${pokemonName}</h2>
-          <img src="${pokemonImage}" alt="${pokemonName}">
+          <span><img src="${pokemonImage}" alt="${pokemonName}"></span>
           <p>Type: ${pokemonTypes.join(', ')}</p>
         </div>
       `;
