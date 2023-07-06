@@ -14,16 +14,24 @@
 <body>
   <div class="pokedex">
     <h1>Know your pokemon!</h1>
-    <input type = "text" id="searchInput" placeholder = "Search for pokemons/type/trainer...">
-    <button onclick="searchPokemon()">Search</button>
+    <div class="search-container">
+     <input type = "text" id="searchInput" placeholder = "Search for pokemons/type/trainer...">
+     <button onclick="searchPokemon()" id="searchButton">Search</button>
+    </div>
     <div class="pokemon-list" id="pokemonlist"></div>
     <div id="cardContainer"></div>
     <div class="carousel">
       <div id="cardContainer"></div>
     </div>
-    <div class="navigation">
-      <button onclick="navigateCards(-1)">Back</button>
-      <button onclick="navigateCards(1)">Next</button>
+    <div id="cardContainer" class="carousel"></div>
+    <button class="prev" onclick="carouselPrevious()">Back</button>
+    <button class="next" onclick="carouselNext()" data-offset="32">Next</button>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="#" id="about">About</a>
+      <a href="#" id="blog">Blog</a>
+      <a href="#" id="projects">Projects</a>
+      <a href="#" id="contact">Contact</a>
     </div>
   </div>
  </body>
