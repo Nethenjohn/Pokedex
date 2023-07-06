@@ -1,5 +1,5 @@
 function fetchPokemon(searchString) {
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=2000') // Fetching all 898 Pokemon
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=2000&') // Fetching all 898 Pokemon
   .then(response => response.json())
   .then(data => {
     document.getElementById('cardContainer').innerHTML = 'Loading...';
@@ -10,7 +10,9 @@ function fetchPokemon(searchString) {
           ? pokemon.name.includes(searchString)
           : true;
       })
-      .slice(0, 12); // Limiting to the first 12 Pokemon for initial display
+      .slice(0, 16); // Limiting to the first 12 Pokemon for initial display
+      let currentPage = 0;
+      const cardsPerPage = 16;
 
     document.getElementById("cardContainer").innerHTML = "";
     // Fetch and store details of each Pokemon
@@ -36,7 +38,7 @@ function fetchPokemon(searchString) {
         <div class="card">
           <h2>${pokemonName}</h2>
           <span><img src="${pokemonImage}" alt="${pokemonName}"></span>
-          <p>Type: ${pokemonTypes.join(', ')}</p>
+          <span><p>${pokemonTypes.join(', ')}</p></span>
         </div>
       `;
 
