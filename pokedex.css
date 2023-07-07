@@ -1,135 +1,135 @@
  body {
-    font-family: 'Arvo','serif';
-    background-color: #4F6367;
-}
+     font-family: 'Arvo', 'serif';
+     background-color: #4F6367;
+ }
 
-h1 {
-    font-family: 'Caprasimo', cursive;
-    color: black;
-    background-color: #B8D8D8;
-    text-align: center;
-    padding: 40px;
-    text-transform: capitalize;
-    border-radius: 20px;
-}
+ h1 {
+     font-family: 'Caprasimo', cursive;
+     color: black;
+     background-color: #B8D8D8;
+     text-align: center;
+     padding: 40px;
+     text-transform: capitalize;
+     border-radius: 20px;
+ }
 
-h2 {
-    text-align: center;
-    text-transform: capitalize;
-    color: #EEF5DB;
-
-  
-}
-
-.pokedex {
-    width: 85%;
-    margin: 0 auto;
-}
-
-#cardContainer {
-    display: flex;
-    width: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-}
-
-.card {
-    /* float: left; */
-    width: 200px;
-    padding: 20px;
-    margin: 10px;
-    background-color: #7A9E9F;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    border-radius: 30px;
-    transition: box-shadow 0.3s ease;
-    transition: transform 0.3s ease;
-
-   
-}
-
-.card span {
-    background-color: rgba(233, 230, 230, 0.733);
-    display: block;
-    border-radius: 200px;
-    margin: 0 auto;
-    width: 100px;
-    text-align: center;
-}
+ h2 {
+     text-align: center;
+     text-transform: capitalize;
+     color: #EEF5DB;
 
 
+ }
 
-.card img {
-    width: 100px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    
-}
+ .pokedex {
+     width: 85%;
+     margin: 0 auto;
+ }
 
-.card:hover {
-    
-    box-shadow: 0 px 16px 0 rgba(0,0,0,0.2);
-    transform: translateY(-10px);
-    background-color: #656b79;
-}
+ #cardContainer {
+     display: flex;
+     width: auto;
+     flex-wrap: wrap;
+     justify-content: center;
+     padding: 10px;
+ }
+
+ .card {
+     /* float: left; */
+     width: 200px;
+     padding: 20px;
+     margin: 10px;
+     background-color: #7A9E9F;
+     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+     border-radius: 30px;
+     transition: box-shadow 0.3s ease;
+     transition: transform 0.3s ease;
 
 
-ul {
-    text-align: left;
-}
+ }
+
+ .card span {
+     background-color: rgba(233, 230, 230, 0.733);
+     display: block;
+     border-radius: 200px;
+     margin: 0 auto;
+     width: 100px;
+     text-align: center;
+ }
 
 
 
-ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-ul li {
-    margin-right: 10px;
-  }
+ .card img {
+     width: 100px;
+     display: flex;
+     flex-flow: column wrap;
+     justify-content: center;
 
-ul.types {
-    display: flex;
-    justify-content: center;
-}
+ }
 
-ul.types li {
-    background-color: lightgrey;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 20px;
-    /* line-height: 18px; */
-    text-transform: capitalize;
-    font-size: 12px;
-    display: inline-block;
-    padding: 3px 8px;
-    
-} 
+ .card:hover {
 
-.search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-  
-#searchInput {
-    margin-right: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-}
-  
-#searchButton {
-    padding: 8px 16px;
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-  
-#searchButton:hover {
-    background-color: #990000;
-}
+     box-shadow: 0 px 16px 0 rgba(0, 0, 0, 0.2);
+     transform: translateY(-10px);
+     background-color: #656b79;
+ }
+
+
+ ul {
+     text-align: left;
+ }
+
+
+
+ ul {
+     display: flex;
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ ul li {
+     margin-right: 10px;
+ }
+
+ ul.types {
+     display: flex;
+     justify-content: center;
+ }
+
+ ul.types li {
+     background-color: lightgrey;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     border-radius: 20px;
+     /* line-height: 18px; */
+     text-transform: capitalize;
+     font-size: 12px;
+     display: inline-block;
+     padding: 3px 8px;
+
+ }
+
+ .search-container {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 20px;
+ }
+
+ #searchInput {
+     margin-right: 10px;
+     padding: 8px;
+     border: 1px solid #ccc;
+ }
+
+ #searchButton {
+     padding: 8px 16px;
+     background-color: #ff0000;
+     color: #fff;
+     border: none;
+     cursor: pointer;
+ }
+
+ #searchButton:hover {
+     background-color: #990000;
+ }
 

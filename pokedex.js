@@ -1,45 +1,45 @@
 function fetchPokemon(searchString) {
   fetch('https://pokeapi.co/api/v2/pokemon?limit=2000') // Fetching all 898 Pokemon
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-    document.getElementById('cardContainer').innerHTML = 'Loading...';
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      document.getElementById('cardContainer').innerHTML = 'Loading...';
 
-    const pokemonList = data
-      .results
-      .filter(pokemon => {
-        return searchString
-          ? pokemon.name.includes(searchString)
-          : true;
-      })
-      .slice(0, 32); // Limiting to the first 32 Pokemon for initial display
-     
+      const pokemonList = data
+        .results
+        .filter(pokemon => {
+          return searchString
+            ? pokemon.name.includes(searchString)
+            : true;
+        })
+        .slice(0, 32); // Limiting to the first 32 Pokemon for initial display
 
-    document.getElementById("cardContainer").innerHTML = "";
-    // Fetch and store details of each Pokemon
-    const fetchPokemonDetails = async () => {
-      for (const pokemon of pokemonList) {
-        await fetchPokemon(pokemon.url);
-      }
-    };
 
-    // Fetch details of a specific Pokemon
-    const fetchPokemon = async (url) => {
-      const response = await fetch(url);
-      const pokemonData = await response.json();
-      const { name, sprites, types } = pokemonData;
+      document.getElementById("cardContainer").innerHTML = "";
+      // Fetch and store details of each Pokemon
+      const fetchPokemonDetails = async () => {
+        for (const pokemon of pokemonList) {
+          await fetchPokemon(pokemon.url);
+        }
+      };
 
-      // Extracting the relevant information
-      const pokemonName = name;
-      const pokemonImage = sprites.front_default;
-      const pokemonTypes = pokemonData.types.map(type => {
-        return `<li style="background-color: ${typeColors[type.type.name] || '#000'}">${type.type.name}</li>`;
-      });
+      // Fetch details of a specific Pokemon
+      const fetchPokemon = async (url) => {
+        const response = await fetch(url);
+        const pokemonData = await response.json();
+        const { name, sprites, types } = pokemonData;
 
-      
-      
-      // Generate HTML for Pokemon card
-      const cardHTML = `
+        // Extracting the relevant information
+        const pokemonName = name;
+        const pokemonImage = sprites.front_default;
+        const pokemonTypes = pokemonData.types.map(type => {
+          return `<li style="background-color: ${typeColors[type.type.name] || '#000'}">${type.type.name}</li>`;
+        });
+
+
+
+        // Generate HTML for Pokemon card
+        const cardHTML = `
       <div class="card" onclick="redirectToPokemon('${pokemonName}')">
        <span><img src="${pokemonImage}" alt="${pokemonName}"></span>
        <h2>${pokemonName}</h2>
@@ -47,14 +47,14 @@ function fetchPokemon(searchString) {
       </div>
   `;
 
-      // Append the card to the cardContainer div
-      document.getElementById('cardContainer').innerHTML += cardHTML;
-    };
+        // Append the card to the cardContainer div
+        document.getElementById('cardContainer').innerHTML += cardHTML;
+      };
 
-    // Call the function to fetch Pokemon details
-    fetchPokemonDetails();
-  })
-  .catch(error => console.log(error));
+      // Call the function to fetch Pokemon details
+      fetchPokemonDetails();
+    })
+    .catch(error => console.log(error));
 }
 
 function createPokemonPage(pokemonName, pokemonData) {
@@ -75,7 +75,7 @@ function redirectToPokemon(pokemonName) {
 function searchPokemon() {
   const searchInput = document.getElementById('searchInput').value.toLowerCase();
 
- fetchPokemon(searchInput);
+  fetchPokemon(searchInput);
 }
 
 const typeColors = {
