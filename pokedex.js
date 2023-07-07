@@ -68,7 +68,7 @@ function createPokemonPage(pokemonName, pokemonData) {
 function redirectToPokemon(pokemonName) {
   // Redirect to the webpage specifically about the Pokémon
   // Replace "pokemonpage.html" with the desired URL or file name
-  window.location.href = `pokemonpage.html?name=${pokemonName}`;
+  window.location.href = `pokemon.html?name=${pokemonName}`;
 }
 
 // Search for a specific Pokemon
@@ -100,9 +100,6 @@ const typeColors = {
   // Add more Pokémon types and corresponding colors as needed
 };
 
-function redirectToPokemon(pokemonName) {
-  window.location.href = `pokemon/${pokemonName}.html`;
-}
 
 
 fetchPokemon();
